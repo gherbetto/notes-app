@@ -6,6 +6,7 @@
                 <p style="cursor: pointer" @click="removeNote(index)">x</p>
             </div>
             <div class="note-body">
+                <span :class="{ green: note.priority === 'low', yellow: note.priority === 'medium', red: note.priority === 'high' }">{{ note.priority}}</span>
                 <p>{{ note.descr }}</p>
                 <span>{{ note.date }}</span>
             </div>
@@ -97,7 +98,16 @@ export default {
     }
     span {
         font-size: 14px;
-        color: #999999;
+            color: #999999;
+    }
+    .green {
+        color: #26de81;
+    }
+    .yellow {
+        color: #fed330;
+    }
+    .red {
+        color: #fc5c65;
     }
 }
 </style>
